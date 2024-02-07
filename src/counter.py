@@ -39,4 +39,4 @@ def delete_counter(name):
     global COUNTERS
     if name in COUNTERS:
         del COUNTERS[name]
-    return {name: COUNTERS[name]}, status.HTTP_204_NO_CONTENT
+    return status.HTTP_204_NO_CONTENT
