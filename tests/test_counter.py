@@ -61,8 +61,6 @@ class CounterTest(TestCase):
         testNumber = self.client.get('/counters/test').text
         self.assertEqual(int(testNumber), 2)
         # now lets try to get a counter that doesnt exist
-        # doesntExist = self.client.get('/counter/Null')
-        # self.assertEqual(doesntExist.status_code, status.HTTP_404_NOT_FOUND)
     
     def test_delete_counter(self):
         result = self.client.post('/counters/deleteTest')
@@ -70,4 +68,6 @@ class CounterTest(TestCase):
 
         result = self.client.delete('/counters/deleteTest')
         self.assertEqual(result.status_code, status.HTTP_204_NO_CONTENT)
+        result = self.client.delete('/counters/deleteNotExist')
+        self.assertEqual(result.status_code, status.HTTP_404_NOT_FOUND)
         

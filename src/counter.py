@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, abort, jsonify
 
 app = Flask(__name__)
 import status
@@ -34,9 +34,11 @@ def read_counter(name):
 
 @app.route('/counters/<name>', methods=['DELETE'])
 def delete_counter(name):
-    """Create a counter"""
-    app.logger.info(f"Request to create counter: {name}")
+    """Delete a counter"""
+    app.logger.info(f"Request to delete counter: {name}")
     global COUNTERS
     if name in COUNTERS:
         del COUNTERS[name]
-    return status.HTTP_204_NO_CONTENT
+        return jsonify({}), status.HTTP_204_NO_CONTENT
+    else:
+        abort(status.HTTP_404_NOT_FOUND, f"Counter '{name}' not found")
