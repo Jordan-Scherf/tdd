@@ -63,6 +63,7 @@ class CounterTest(TestCase):
         # now lets try to get a counter that doesnt exist
     
     def test_delete_counter(self):
+        "It should delete a counter after its created"
         result = self.client.post('/counters/deleteTest')
         self.assertEqual(result.status_code, status.HTTP_201_CREATED)
 
