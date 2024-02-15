@@ -27,7 +27,7 @@ jobs:
 
       - name: Run unit test with nose
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
-      # Wanted something that checks formatting, 
+      # Wanted something that checks formatting, Chatgpt suggested I use black to format and check successful formatting
       - name: Format code with black
         run: black .
 
