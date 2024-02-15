@@ -29,4 +29,7 @@ jobs:
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
       # Wanted something that checks formatting, 
       - name: Format code with black
-        run: black . | black --check .
+        run: black .
+        
+      - name: Check code formating
+        run: black --check
