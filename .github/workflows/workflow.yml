@@ -29,4 +29,4 @@ jobs:
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
 
       - name: Format code with black
-        run: black test_counter.py | black counter.py | black --check .
+        run: black /__w/tdd/tdd/src/counter.py | black /__w/tdd/tdd/tests/test_counter.py | black --check .
