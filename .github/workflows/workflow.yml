@@ -27,6 +27,6 @@ jobs:
 
       - name: Run unit test with nose
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
-
+      # Wanted something that checks formatting, 
       - name: Format code with black
-        run: black /__w/tdd/tdd/src/counter.py | black /__w/tdd/tdd/tests/test_counter.py | black --check .
+        run: black . | black --check .
