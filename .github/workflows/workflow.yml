@@ -30,6 +30,6 @@ jobs:
       # Wanted something that checks formatting, 
       - name: Format code with black
         run: black .
-        
+
       - name: Check code formating
-        run: black --check
+        run: black --check .
