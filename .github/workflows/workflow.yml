@@ -27,6 +27,6 @@ jobs:
 
       - name: Run unit test with nose
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
-        
+
       - name: Format code with black
-        run: black --check .
+        run: black test_counter.py | black counter.py | black --check .
